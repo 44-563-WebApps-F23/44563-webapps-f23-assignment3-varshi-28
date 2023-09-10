@@ -61,5 +61,16 @@
                 <a href="https://stackoverflow.com/questions/31626852/how-to-add-konami-code-in-a-website-based-on-html">https://stackoverflow.com/questions/31626852/how-to-add-konami-code-in-a-website-based-on-html</a>
             </footer>
         </blockquote>
+    <pre>
+        var kkeys = [], konami = "38,38,40,40,37,39,37,39,66,65";
+        $(document).keydown(function(e) {
+        kkeys.push( e.keyCode );
+        if ( kkeys.toString().indexOf( konami ) >= 0 ) {
+        $(document).unbind('keydown',arguments.callee);    
+        // do something awesome
+        $("body").addClass("konami");
+        }
+        });
+    </pre>
     </body>
 </html>
